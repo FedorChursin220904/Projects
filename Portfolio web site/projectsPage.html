@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <style type="text/css">
+
+        html {
+            font-family: 'Lato', sans-serif;
+        overflow: hidden;}
+    
+       
+        body{
+            background-color: #011B3C;
+            min-height: 100% !important;
+            height:300vh;
+        }
+        
+        #topHeader{
+            color: white;
+            position:absolute;
+            left:50vw;
+            font-size:2vw;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+        }
+        
+        
+
+        #bgColor{
+            background-color: rgba(59, 59, 59, 0.5);
+            width:100%;
+            height:100%;
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color:white;
+            font-size:1.5vw;
+        }
+    
+        .greetingPopUp{
+            z-index: 1;
+            position: absolute;
+            opacity: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width:55%;
+            height:80%;
+            background-color: white;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            text-align: center;
+           
+        }
+
+        #greetingText{
+            font-size:2vw;
+            color:#011B3C;
+            position: absolute;
+            opacity: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+        .EcoStepChooser{
+            position: absolute;
+            border-radius: 5px;
+            top:10vh;
+            left:7.5%;
+            height:85vh;
+            width: 35vw;
+            background-color:rgb(129, 214, 129);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        .PortfolioSiteChooser{
+            position: absolute;
+            top:10vh;
+            border-radius: 5px;
+            right:7.5%;
+            height:85vh;
+            width: 35vw;
+            background-color:rgb(112, 120, 228);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        #ecoStepReadMoreButton{
+            position: absolute;
+            bottom:5vh;
+            border-radius:5px;
+            width:5.5vw;
+            height:5.5vh;
+            background-color:white; 
+            border:solid grey;
+            color:grey;
+        }
+        #portfolioSiteReadMoreButton{
+            position: absolute;
+            bottom:5vh;
+            border-radius:5px;
+            width:5.5vw;
+            height:5.5vh;
+            background-color:white;
+            border:solid grey;
+            color:grey;
+        }
+        #h1EcoStepChooser{
+            color:#008000;
+        }
+        #h1PortfolioSiteChooser{
+            color:#011B3C;
+        }
+        #portfolioSiteImage{
+            position: absolute;
+            top:10vh;
+            width:calc(30vh*2.06);
+            height:30vh;
+        }
+        #ecoStepScreenshot{
+            position: absolute;
+            top:10vh;
+            left:10px;
+            height: 60vh;
+            width:calc(60vh*0.46);
+            
+
+        }
+        /*rgb(129, 214, 129)*/
+        #EcoStepChooserText{
+            background-color:clear;
+            position: absolute;
+            top:10vh;
+            right:2.5vw;
+            width:calc(60vh*0.46);
+            height:calc(60vh-5px);
+            font-size:2vh;
+            color:white;
+            text-align:center;
+        }
+        #PortfolioSiteChooserText{
+            position: absolute;
+            color:white;
+           
+           
+            /* margin-top:10px; */
+            font-size:2vh;
+        }
+        #ecoStepParagraph{
+            position:absolute;
+            top:100vh;
+            background-color:rgb(129, 214, 129);
+            border-radius: 5px;
+            color:white;
+            height:92.5vh;
+            object-fit: cover;
+            left:7.5%;
+            width:85%;
+            padding-top:10px;
+            
+            
+        }
+        #portfolioWebSiteParagraph{
+            position:absolute;
+            top:200vh;
+            height:92.5vh;
+            left:7.5%;
+            width:85%;
+            background-color:rgb(112, 120, 228);
+            border-radius: 5px;
+        }
+        /* 124 68  794 1051  0.156 0.0647 */
+        #psText{
+            position: relative;
+            top:100px;
+            
+
+        }
+        #mainScreenEcoStep{
+            position:absolute;
+            width:calc(50vh*0.5625);
+            height:50vh;
+            
+        }
+        #actionScreenEcoStep{
+            position:absolute;
+            width:calc(50vh*0.5625);
+            height:50vh;
+            /* left:600px; */
+        }
+        #treeksScreenEcoStep{
+            position:absolute;
+            width:calc(50vh*0.5625);
+            height:50vh;
+            /* left:1200px; */
+        }
+
+        #ecoStepParagraphText{
+            position:relative;
+            /* top:46vh; */
+            font-size:2vh;
+        }
+        #portfolioWebSiteParagraphDiv{
+            font-size:2vh;
+            color:white;
+            position: relative;
+        }
+        
+        #paragraphHeaderEcoStep{
+            color:#008000;
+            position:relative;
+            left: 2vw;
+        }
+    
+        </style>
+</head>
+<body>
+    <h1 id="topHeader">Projects</h1>
+    
+    <div id="bgColor">
+        <div class="greetingPopUp">
+            <a id = "greetingText"> For my entire life I have made two projects</br></br>
+            First one is this site.</br></br>Second one is app that helps to calculate carbon footprint and gives personal tips on how to reduce it.</br></br>Click anywhere to read about them.
+            </a> 
+        </div>
+    </div>
+
+
+    <div class = "EcoStepChooser" id ="classEcoStepChooser" > 
+        <h1 id="h1EcoStepChooser">EcoStep</h1>
+        <img id = "ecoStepScreenshot" src="ecoStepScreen.png">
+        <div id="EcoStepChooserText">
+            <a id="esText">Undoubtedly enviromental problems are extremely alarming in modern society.</br></br>So I have decided to make an app that will help to change this situation.</br></br>Humanity produces tonnes of CO2 everyday.</br></br>So main goal of my app is to reduce personal carbon footprint.</a>
+        </div>
+        <button id = "ecoStepReadMoreButton">Read More</button>
+    </div>
+
+
+    <div class = "PortfolioSiteChooser" id = "classPortfolioSiteChooser">
+        <h1 id="h1PortfolioSiteChooser">Portfolio WebSite</h1>
+        <img id = "portfolioSiteImage" src = "portfolioSiteImage.png">
+        <div id="PortfolioSiteChooserText">
+            <a id="psText">I decided to make this project as a challenge.</br></br>I knew that I was able to make a mobile app but it was interesting to see if I have enough skills to create portfolio website.</br></br>If you are reading this article now, I have completed the task.</br></br>By the way, main page of this site is a tennis court </br>as I am doing this sport for 12 years.</a>
+        </div>
+        <button id = "portfolioSiteReadMoreButton">Read More</button>
+        <a></a>
+    </div>
+    <div id="ecoStepParagraph">
+        <h1 id="paragraphHeaderEcoStep">EcoStep</h1>
+        <!-- 1242  x  2208 0.5625-->
+        <img id = "mainScreenEcoStep" src="IMG_0655.PNG">
+        <img id = "actionScreenEcoStep" src="IMG_0656.PNG">
+        <img id = "treeksScreenEcoStep" src="IMG_0657.PNG">
+        <div id = "ecoStepParagraphDiv" style="position: absolute">
+            <p id = "ecoStepParagraphText">Undoubtedly environmental problems are extremely alarming in modern society. So I have decided to make an app “EcoStep”  that will help to change this situation.</br></br>
+
+                When I decided to make EcoStep I didn’t know anything about mobile development. So, I decided to take an online course where I would learn Swift. 
+                It took me 2 months to complete this course and then I started creating my own first app. I faced a lot of issues and annoying bugs but after 5-6 months of hard work my app was ready for deployment. Now you can find it <a href="https://apps.apple.com/us/app/ecostep/id1568097963">in the AppStore.</a></br>
+                
+                Let me tell you about how this app works. The user should enter his action daily. It can be made by using the action page. 
+                There users can find dozens of different actions from eating an apple to taking a bath. For example, the user chooses a food category, then he needs to choose a specific meal and enter the approximate weight of this meal.
+                Then app counts the amount of CO2 which was emitted by the action. The user can see his footprint on the main screen. If the user does not exceed the norm circle will be green. If the user is close to exceeding the norm circle will be yellow. 
+                And in case of exceeding the norm circle will be red. The next day CO2 counter will be nullified and the app will give user 3-5 personal tips on how to reduce footprint. At first, users can get only tips about food. These tips are based on actions done the day before. 
+                Also, I decided to make a function that is called "Treeks". Users can gain one Treek after entering daily actions. For 3/5/9 Treeks users can open a magic chest that contains drinks cards, transport cards, and housing cards.
+                After gaining 15 cards of one type users gets the ability to get tips not only for food but also for drinks, transportation, or housing. So that’s how EcoStep works.</br></br>
+
+                Also we have an <a href="https://www.instagram.com/ecostep_app/">instagram account</a> where we tell our subscribers about enviroment.</br></br>
+
+                P.S. My mom is set as a developer because I'm only 16 years old and I can't post apps in the AppStore.
+            </p>
+        </div>
+
+    </div>
+    
+    <div id="portfolioWebSiteParagraph">
+        <h1>Portfolio WebSite</h1>
+        <img id = "portfolioParagraphImage" src = "portfolioSiteImage.png" style="position:absolute">
+        <div id="portfolioWebSiteParagraphDiv">
+            <p>As I already mentioned I have decided to make a website because I wanted to check whether I am able to make a complete it by myself or not. As a result, I completed this task.</br></br>
+
+                While I was completing this task I faced a quite complicated problem. This problem was the design of the website. I wanted to make something special and interesting that will somehow reflect my personality and I stopped with a tennis court as the main page design. I has been doing this sport for 12 years. </br></br>
+                
+                When users open the website they get to the main screen which is designed as a tennis court. From this page users can get to the life, education, projects, or hobbies section.
+                
+                Let me tell you a bit about these sections. The life page contains information about my life  and interests. On the education page there is information about my school studies and additional courses that I took. The projects page you are visiting now. And the last one is the section with the information about my hobbies.</br></br>
+                
+                Completing this task was pretty comprehensive and sometimes even frustrating but after 3 months of hard work, I managed to complete this challenge.</br></br>
+                </p>
+        </div>
+    </div>
+
+    <script>
+    
+    $("#bgColor").click(function(){
+            $("html").css('overflow', 'visible');
+        });
+
+        $("#ecoStepReadMoreButton").click(function() {
+            
+            $('html,body').animate({
+                scrollTop: $("#ecoStepParagraph").offset().top},
+                'slow');
+        });
+    
+        $("#portfolioSiteReadMoreButton").click(function() {
+            
+            $('html,body').animate({
+                scrollTop: $("#portfolioWebSiteParagraph").offset().top},
+                'slow');
+        });
+        </script>
+        <script src= "fitText.js">
+            $(".PortfolioSiteChooserText").fitText(0.38);
+        
+            $(".ecoStepParagraphDiv").fitText(0.38);
+        </script>
+    
+    <script type="text/javascript">
+    document.getElementById("bgColor").onclick = function(){
+                    document.getElementById("bgColor").style.opacity = "0.0";
+                    document.getElementById("bgColor").remove();
+                    haveGreetingBeenShwon = true;
+                    localStorage.setItem("greetingBool",haveGreetingBeenShown)
+                }
+    // 0.42
+        function alignPortfolioSite(){
+           
+
+        var widthOfPage = $(window).width();
+        
+        var heightOfPage = $(window).height();  
+       
+        document.getElementById("classPortfolioSiteChooser").style.width = widthOfPage*0.35 + "px";
+        document.getElementById("classPortfolioSiteChooser").style.height = heightOfPage*0.85 + "px";
+        var protfolioSiteChooserWidth = widthOfPage*0.35 ;
+        var protfolioSiteChooserHeight = heightOfPage*0.85;
+        var portfolioSiteChoserYPos = document.getElementById("classPortfolioSiteChooser").getBoundingClientRect().y;
+
+        var positionOFtextDivY = document.getElementById("PortfolioSiteChooserText").getBoundingClientRect().y;
+        var positionOfImgDiv = document.getElementById("portfolioSiteImage").getBoundingClientRect().y;
+        
+        
+        var smeshenie = protfolioSiteChooserHeight * 0.42 
+
+        var portfolioSiteImgHeight = protfolioSiteChooserWidth * 0.32;
+        
+        
+        document.getElementById("portfolioSiteImage").style.width = (protfolioSiteChooserWidth * 0.9) + "px";
+        document.getElementById("portfolioSiteImage").style.height = (protfolioSiteChooserWidth * 0.9 * 0.48) + "px";
+        document.getElementById("PortfolioSiteChooserText").style.width = (protfolioSiteChooserWidth * 0.9) + "px";
+        document.getElementById("PortfolioSiteChooserText").style.height = (protfolioSiteChooserHeight * 0.41147) + "px"
+
+        document.getElementById("PortfolioSiteChooserText").style.top = protfolioSiteChooserWidth * 0.9 * 0.6 + "px";
+        
+        
+    
+        document.getElementById("portfolioSiteReadMoreButton").style.width = (protfolioSiteChooserWidth*0.156) + "px";
+        document.getElementById("portfolioSiteReadMoreButton").style.height =( protfolioSiteChooserHeight*0.0647) + "px";
+        document.getElementById("portfolioSiteReadMoreButton").style.y = positionOFtextDivY + smeshenie + "px";
+        }
+
+        function alignEcoStepContainer(){
+        var widthOfEcoStepBox = document.getElementById("classEcoStepChooser").getBoundingClientRect().width;
+        var heightOfEcoStepBox = document.getElementById("classEcoStepChooser").getBoundingClientRect().height;
+
+        var heightOfEcoStepParagraph = document.getElementById("esText").getBoundingClientRect().height;
+        
+        var positionOFtextDivY = document.getElementById("classEcoStepChooser").getBoundingClientRect().y;
+        
+        var smeshenie = heightOfEcoStepBox * 0.42 
+        
+        console.log(heightOfEcoStepParagraph);
+
+        document.getElementById("ecoStepScreenshot").style.width = (widthOfEcoStepBox*0.40) + "px";
+        document.getElementById("ecoStepScreenshot").style.height = (widthOfEcoStepBox*0.40*2.16) + "px";
+
+        document.getElementById("EcoStepChooserText").style.width = (widthOfEcoStepBox*0.40) + "px";
+        document.getElementById("EcoStepChooserText").style.height = (heightOfEcoStepParagraph) + "px";
+        
+
+        document.getElementById("esText").style.width = (widthOfEcoStepBox*0.40) + "px";
+        document.getElementById("esText").style.height = (heightOfEcoStepParagraph) + "px";
+
+
+        document.getElementById("ecoStepReadMoreButton").style.width = (widthOfEcoStepBox*0.156) + "px";
+        document.getElementById("ecoStepReadMoreButton").style.height =( heightOfEcoStepBox*0.0647) + "px";
+        document.getElementById("ecoStepReadMoreButton").style.y = positionOFtextDivY + smeshenie + "px";
+        }
+
+        function alignEcoStepParagraph(){
+        var widthOfPage = $(window).width();
+        var heightOfPage = $(window).height();
+
+
+        var paragraphWidth = widthOfPage*0.85;
+        var paragraphHeight = heightOfPage*0.9;
+
+        var heightOfPhotos = paragraphHeight*0.35;
+        var widthOfPhotos  = paragraphHeight*0.35*0.5625;
+
+        var positionYOfMainScreen = document.getElementById("mainScreenEcoStep").getBoundingClientRect().y;
+        
+        var posYofHeader = document.getElementById("paragraphHeaderEcoStep").getBoundingClientRect().y;
+      
+
+        var spacingBetweenPictures = (paragraphWidth-3*widthOfPhotos)/2;
+
+        
+
+        document.getElementById("mainScreenEcoStep").style.width = widthOfPhotos + "px";
+        document.getElementById("mainScreenEcoStep").style.height = heightOfPhotos + "px";
+        document.getElementById("mainScreenEcoStep").style.left = spacingBetweenPictures*0.35 + "px";
+
+        document.getElementById("actionScreenEcoStep").style.width = widthOfPhotos + "px";
+        document.getElementById("actionScreenEcoStep").style.height = heightOfPhotos + "px";
+        document.getElementById("actionScreenEcoStep").style.left = widthOfPhotos + spacingBetweenPictures + "px";
+
+        document.getElementById("treeksScreenEcoStep").style.width = widthOfPhotos + "px";
+        document.getElementById("treeksScreenEcoStep").style.height = heightOfPhotos + "px";
+        document.getElementById("treeksScreenEcoStep").style.left = 2*widthOfPhotos + 2*spacingBetweenPictures - spacingBetweenPictures*0.35+ "px";
+        
+
+        // document.getElementById("ecoStepParagraphDiv").style.top = posYofHeader+heightOfPhotos + "px";
+        document.getElementById("ecoStepParagraphDiv").style.height = paragraphHeight*0.65 + "px";
+        document.getElementById("ecoStepParagraphDiv").style.width = paragraphWidth*0.9 + "px";
+        document.getElementById("ecoStepParagraphDiv").style.left = paragraphWidth*0.05 + "px";
+
+        document.getElementById("ecoStepParagraphText").style.top = heightOfPhotos*1.02 + "px";
+        }
+        function alignPortfolioWebSitParagraph(){
+        var widthOfPage = $(window).width();
+        var heightOfPage = $(window).height();
+
+        var paragraphWidth = widthOfPage*0.85
+        var paragraphHeight = heightOfPage*0.9;
+
+        document.getElementById("portfolioParagraphImage").style.width = paragraphWidth*0.65 + "px";
+        document.getElementById("portfolioParagraphImage").style.height = paragraphWidth*0.65*0.484 + "px";
+        document.getElementById("portfolioParagraphImage").style.left = paragraphWidth*0.2 + "px";
+
+        document.getElementById("portfolioWebSiteParagraphDiv").style.top = paragraphWidth*0.65*0.484*1.02 + "px"; 
+        document.getElementById("portfolioWebSiteParagraphDiv").style.width = paragraphWidth*0.9 + "px";
+        document.getElementById("portfolioWebSiteParagraphDiv").style.left = paragraphWidth*0.05 + "px";
+        }
+    
+    window.onload = function(){
+        alignPortfolioSite();
+        alignEcoStepContainer();
+        alignEcoStepParagraph();
+        alignPortfolioWebSitParagraph();
+        
+        // 1916 929
+    }
+
+// 584 330 584 802 
+    window.onresize = function(){
+        alignPortfolioSite();
+        alignEcoStepContainer();
+        alignEcoStepParagraph();
+        alignPortfolioWebSitParagraph();
+    }
+    
+    
+    </script>
+
+    
+</body>
+
+</html>

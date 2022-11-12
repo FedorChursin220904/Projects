@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life</title>
+    <script src="jquery.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <style type="text/css">
+
+        html {
+            overflow:hidden;
+            font-family: 'Lato', sans-serif;
+        }
+    
+       
+        body{
+            background-color: #011B3C;
+        }
+        #topHeader{
+            color: white;
+            position:absolute;
+            left:50vw;
+            font-size:2vw;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+        }
+        #bgColor{
+            background-color: rgba(59, 59, 59, 0.5);
+            width:100%;
+            height:100%;
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color:white;
+            font-size:2vw;
+        }
+    
+        .greetingPopUp{
+            z-index: 1;
+            position: absolute;
+            opacity: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width:45%;
+            height:65%;
+            background-color: white;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            text-align: center;
+           
+        }
+
+        #greetingText{
+            font-size:2vw;
+            color:#011B3C;
+            position: absolute;
+            opacity: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+       
+
+        .change{
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+        transform: rotate(180deg);
+        transition-duration: 5s;
+        }
+        #textPlusPhotos{
+            position: absolute;
+            top:7.5vw;
+            color:white;
+            font-size: 1.45vw;
+            margin-right: 1vw;
+            margin-left: 1vw;
+        }
+        #FirstImage{
+            /* position: absolute; */
+            /* top:2.5vw; */
+            float: left;
+            shape-outside: circle(50% );
+            margin-right: 1vw;
+            border-radius: 50%; 
+        }
+        #SecondImage{
+            float: right;
+            shape-outside: circle(50% );
+            margin-left: 1vw;
+            border-radius: 50%; 
+               }
+        #ThirdImage{
+            float: left;
+            shape-outside: circle(50% );
+            margin-right: 1vw;
+            border-radius: 50%; 
+        }
+        #FourthImage{
+            float: right;
+            shape-outside: circle(50% );
+            margin-left: 1vw;
+            border-radius: 50%; 
+        }
+        #FifthImage{
+            float: left;
+            shape-outside: circle(50% );
+            margin-right: 1vw;
+        }
+        #SixthImage{
+            float: right;
+            shape-outside: circle(50% );
+            margin-left: 1vw;
+            border-radius: 50%; 
+        }
+        #SeventhImage{
+            float: left;
+            shape-outside: circle(50% );
+            margin-right: 1vw;
+        }
+        #ageButtonBlock{
+            position: absolute;
+            top:3.5vw;
+            width: 100%;
+        }
+        .ageBlockButtons{
+            height:5.5vh;
+            width:5.5vw;
+            border-radius:5px;
+            border:0px;
+            
+        }
+        #sixYearsBtn{
+            position: absolute;
+            background-color:rgb(112, 120, 228);
+            color:white;
+        }
+        #thirteenYearsBtn{
+            position: absolute;
+            background-image: linear-gradient(45deg, rgb(112, 120, 228), rgb(121,167,179));
+            color:white;
+
+
+        }
+    
+        #seventeenYearsBtn{
+            position: absolute;
+            background-image: linear-gradient(45deg, rgb(118,151,195),rgb(129,214,129));
+            color:white;
+        }
+        #sixteenYearsBtn{
+            position: absolute;
+            color:white;
+            background-color: rgb(129,214,129);
+
+        }
+        #sixYearsHeader{
+            font-size:2.5vw;
+            margin-left:1vw;
+        }
+        #sixYearTextDiv{
+            padding: 0.1vw;
+            border-radius: 5px;
+            border: 0.25vw solid rgb(112, 120, 228);
+        
+        }
+        #thirteenYearsDiv{
+            margin-top:1vh;
+            padding: 0.1vw;
+            border-radius: 5px;
+            border: 0.25vw solid #7CB0AA;
+           
+        }
+        #seventeenYearsDiv{
+            margin-top:1vh;
+            padding: 0.1vw;
+            border-radius: 5px;
+            height:auto;
+            border: 0.25vw solid rgb(123,183,162);
+        }
+        #sixteenYearsDiv{
+            margin-top:1vh;
+            padding: 0.1vw;
+            border-radius: 5px;
+            height:auto;
+            border: 0.25vw solid rgb(129, 214, 129);
+        }
+        #thirteenTextParOne{
+            text-indent: 1.5em; /* Отступ первой строки */
+            text-align: justify;
+            margin-bottom:0;
+        }  
+        #thirteenTextParTwo{
+            margin : 0;
+            padding-top:0;
+            text-indent: 1.5em; /* Отступ первой строки */
+            text-align: justify;
+        }
+        #seventeenYearsTextFirstPar{
+            text-indent: 1.5em; /* Отступ первой строки */
+            text-align: justify;
+            margin-bottom:0;
+        }
+        #seventeenYearsTextSecondPar{
+            margin : 0;
+            padding-top:0;
+            text-indent: 1.5em; /* Отступ первой строки */
+            text-align: justify;
+        }
+        #conclusionPar{
+            width: 100%;
+            text-align: center;
+            
+        }
+        </style>
+</head>
+<body>
+    <h1 id="topHeader">Life</h1>
+    <div id="bgColor">
+        <div class="greetingPopUp">
+            <a id = "greetingText">  Hover the mouse over the tennis balls to see images that are hidden behind them. Or double click on any ball to unlock all photos immediately. <br></br>
+                Also you can choose preferable age section by clicking on the button.
+            </a> 
+        </div>
+    </div>
+    <div id="ageButtonBlock">
+        <button class = "ageBlockButtons" id ="sixYearsBtn">0-6 years</button>
+        <button class = "ageBlockButtons" id = "thirteenYearsBtn">6-13 years</button>
+        <button class = "ageBlockButtons" id="seventeenYearsBtn">13-14 years</button>
+        <button class = "ageBlockButtons" id="sixteenYearsBtn">15-16 years</button>
+    </div>
+
+    <div id = "textPlusPhotos">
+        <div id ="sixYearTextDiv">
+            <h1 id = "sixYearsHeader">0-6 years</h1>
+            <p>
+                <div><img class = "pictures" id ="FirstImage" src = "legoPicture.jpg"></div><div><img class = "pictures" id ="SecondImage" src = "tennisBall.png"></div>
+                Hello, my name is Fedya and I was born in Moscow on the 25th of December 2004. From a really young age I was interested in technologies. This interest appeared when my father gave me a Lego kit as a present. From that moment I started asking for a  Lego kit for every holiday celebration. What is more, my favorite Lego collection was Lego technics. I liked to build cars, motorcycles, rockets and other means of transport.  Today I have a collection of 20 different Lego models, it keeps my interest in building something real one day.
+          
+                When I was 4 years old my mom decided to sign me up for tennis lessons. At first, I disliked this sport as I did not understand why I had to do this. For approximately half a year my mom made me play tennis. As a result, I сame to love this sport and later on my dream was to become a professional tennis player. Tennis made me understand that I should never give up, that to achieve any goals I should work hard,  and made me feel confident about myself.
+                
+               
+            </p>
+
+        </div>
+        <div id ="thirteenYearsDiv">
+            <h1 id = "thirteenYearsHeader">6-13 years</h1>
+            <p id="thirteenTextParOne">
+                <img  class = "pictures" id ="ThirdImage" src = "tennisBall.png">
+                At the age of 6 I went to school. I really liked my school as I made a lot of new friends. It was an amazing time of my life as I was not bothered by anything and I was doing what I loved. Also, it was the first time when I got into programming, as my parents gave me a Lego Mindstorms kit(programmable robot parts) as a gift. As far as I remember, I made small scripts from scratch that made my robot sort colored balls or even go around different obstacles. What is more I was keen on playing computer games and my favorite game was Minecraft. It was the second time when I tried myself in programming, as I was trying to make different game modes for Minecraft.<img id ="FourthImage" src = "tennisBall.png"> It was an amazing experience for me. Then I started to realize that with the help of programming I can make anything I want. Later on, I attended a 3D printing course, but honestly I disliked it, as it took considerable time to print a model. Usually, I had to wait for 1-2 weeks to get my figure printed.
+            </p>
+            <p id="thirteenTextParTwo">
+                In secondary school, I continued playing tennis. Moreover, I took part in different tournaments. My life was pretty much the same until I decided to enroll in the highly ranked lyceum 1535 in Moscow, that decision was a turning point in my life. I started studying thoroughly and meticulously that year, as I was determined to change my school for the better one. There were three exams that I needed to pass: the maths exam, the Russian language exam, and the English language exam. I got enough points to be enrolled in the lyceum. I was delighted with the news, because I understood that this had a great influence on my future life.
+            </p>
+
+        </div>
+        <div id ="seventeenYearsDiv">
+            <h1 id = "seventeenYearsHeader">13-14 years</h1>
+            <p id = "seventeenYearsTextFirstPar">
+                <img class = "pictures" id ="FifthImage" src = "tennisBall.png">
+                I was so nervous and so excited about going to the new school. From the very beginning of the academic year, I understood that it will be very interesting to study there but also it will be pretty hard. I had more homework to do and the requirements were greater too. It was the time when I had to choose between education and tennis as it was almost impossible to study well and to play tennis.<img class = "pictures" id ="SixthImage" src = "tennisBall.png">  I chose education and this decision meant that I would spend less time on tennis than I did before. Thanks to lyceum I began to like studying. It was the first time when I had a willingness to go to school. I met plenty of new friends. The first year in school was tough there was a lot of pressure but I coped with it. Everything was excellent until the ninth year when  I had to choose a specialization for the last two years of school. All my friends chose economics as a major. All of them said that I had to choose the same one to be in class with them but I decided to go to the IT class. I do not regret making this decision at all as now I am doing things that really make me happy. I had to pass the informatics and mathematics exams to be enrolled in the class. I was practicing a lot so it was not tough for me to pass these exams. In the middle of April I already knew that I will study informatics next year so I decided to take additional courses. At first, I wanted to try myself as a game developer. I purchased an online course but I did not enjoy the process of making games so I got a refund and learned how to make websites. 
+            
+            </p>
+            <!-- </br>
+            <p id = "seventeenYearsTextSecondPar">
+                <img id ="SixthImage" src = "tennisBall.png"> 
+            In the tenth class I decided to make a project dedicated to ecology. I made an app that will make a difference in nowadays situation. This app is called EcoStep and it helps people to calculate their carbon footprint and then the app gives personal tips on how to reduce that footprint. To make this app I studied IOS development for two months. Click here to read more about EcoStep. In the tenth I decided to make up my mind and decide where I would like to study in the future. As a result, now I would like to get a degree in the Netherlands in the Artificial Intelligence sphere. I was always interested in robotics and how they can interact with humans, so that is why I would like to deep dive into this field. Also, I have a dream of continuing the development of the bionic body parts field. I would like to create new body parts that will be affordable for everyone.             
+            </br>
+            </p>
+            <center><a id = "conclusionPar">This year I am finishing school and I am studying hard to achieve my goal.</a> -->
+            
+
+        </div>
+        <div id ="sixteenYearsDiv">
+            <h1 id = "seventeenYearsHeader">15-16 years</h1>
+            <p>
+            <img class = "pictures" id ="SeventhImage" src = "tennisBall.png">
+            In the tenth class I decided to make a project dedicated to ecology. I made an app that will make a difference in nowadays situation. This app is called EcoStep and it helps people to calculate their carbon footprint and then the app gives personal tips on how to reduce that footprint. To make this app I studied IOS development for two months. <a href = "projectsPage.html">Click here to read more about EcoStep.</a> In the tenth I decided to make up my mind and choose where I would like to study in the future. As a result, now I would like to get a degree in the Netherlands in the Artificial Intelligence sphere. I was always interested in robotics and how they can interact with humans, so that is why I would like to deep dive into this field. Also, I have a dream of continuing the development of the bionic body parts field. I would like to create new body parts that will be affordable for everyone.             
+            </br>
+            </p>
+            <center><a id = "conclusionPar">This year I am finishing school and I am studying hard to achieve my goal.</a>
+            
+
+        </div>
+        
+        
+        
+        
+    </div>
+    <script type="text/javascript">
+         document.getElementById("bgColor").onclick = function(){
+                    document.getElementById("bgColor").style.opacity = "0.0";
+                    document.getElementById("bgColor").remove();
+                    
+                   
+                }
+                window.onload = function(){
+                    var widthOfPage = $(window).width();
+                    var heightOfPage = $(window).height();
+
+                    var widthOfSixYearsDiv = document.getElementById("sixYearTextDiv").getBoundingClientRect().width;
+                    var heightOfSixYearsDiv = document.getElementById("sixYearTextDiv").getBoundingClientRect().height;
+                    
+                    document.getElementById("FirstImage").style.width = widthOfPage*0.13 + "px";
+                    document.getElementById("FirstImage").style.height = widthOfPage*0.13 + "px";
+
+
+                    var buttonWidth = document.getElementById("thirteenYearsBtn").getBoundingClientRect().width;
+
+                    var spacingBetweenButtons = widthOfPage - buttonWidth;
+                    document.getElementById("sixYearsBtn").style.left = spacingBetweenButtons/3 + "px";
+                    document.getElementById("sixteenYearsBtn").style.right = spacingBetweenButtons/3 + "px";
+                    document.getElementById("thirteenYearsBtn").style.left = spacingBetweenButtons-2*spacingBetweenButtons/3 + (spacingBetweenButtons/3)/3 + "px";
+                    document.getElementById("seventeenYearsBtn").style.left = spacingBetweenButtons-2*spacingBetweenButtons/3 + 2*(spacingBetweenButtons/3)/3 + "px";
+                    // document.getElementById("sixteenYearsBtn").style.left = spacingBetweenButtons/3 + 3*(spacingBetweenButtons/3)/2 + "px";
+                    
+
+                    var firstImageWidth = document.getElementById("FirstImage").getBoundingClientRect().width;
+                    var firstImageHeight = document.getElementById("FirstImage").getBoundingClientRect().height;
+
+
+                    document.getElementById("SecondImage").style.width = firstImageWidth + "px";
+                    document.getElementById("SecondImage").style.height = firstImageHeight + "px";
+                    document.getElementById("ThirdImage").style.width = firstImageWidth + "px";
+                    document.getElementById("ThirdImage").style.height = firstImageHeight + "px";
+                    document.getElementById("FourthImage").style.width = firstImageWidth + "px";
+                    document.getElementById("FourthImage").style.height = firstImageHeight + "px";
+                    document.getElementById("FifthImage").style.width = firstImageWidth + "px";
+                    document.getElementById("FifthImage").style.height = firstImageHeight + "px";
+                    document.getElementById("SixthImage").style.width = firstImageWidth + "px";
+                    document.getElementById("SeventhImage").style.height = firstImageHeight + "px";
+                    document.getElementById("SeventhImage").style.width = firstImageWidth + "px";
+                }
+                window.onresize = function(){
+                    var widthOfPage = $(window).width();
+                    var heightOfPage = $(window).height();
+
+                    var widthOfSixYearsDiv = document.getElementById("sixYearTextDiv").getBoundingClientRect().width;
+                    var heightOfSixYearsDiv = document.getElementById("sixYearTextDiv").getBoundingClientRect().height;
+                    
+                    document.getElementById("FirstImage").style.width = widthOfPage*0.13 + "px";
+                    document.getElementById("FirstImage").style.height = widthOfPage*0.13 + "px";
+
+
+                    var buttonWidth = document.getElementById("thirteenYearsBtn").getBoundingClientRect().width;
+
+                    var spacingBetweenButtons = widthOfPage - buttonWidth;
+                    document.getElementById("sixYearsBtn").style.left = spacingBetweenButtons/3 + "px";
+                    document.getElementById("sixteenYearsBtn").style.right = spacingBetweenButtons/3 + "px";
+                    document.getElementById("thirteenYearsBtn").style.left = spacingBetweenButtons-2*spacingBetweenButtons/3 + (spacingBetweenButtons/3)/3 + "px";
+                    document.getElementById("seventeenYearsBtn").style.left = spacingBetweenButtons-2*spacingBetweenButtons/3 + 2*(spacingBetweenButtons/3)/3 + "px";
+                    // document.getElementById("sixteenYearsBtn").style.left = spacingBetweenButtons/3 + 3*(spacingBetweenButtons/3)/2 + "px";
+                    
+
+                    var firstImageWidth = document.getElementById("FirstImage").getBoundingClientRect().width;
+                    var firstImageHeight = document.getElementById("FirstImage").getBoundingClientRect().height;
+
+
+                    document.getElementById("SecondImage").style.width = firstImageWidth + "px";
+                    document.getElementById("SecondImage").style.height = firstImageHeight + "px";
+                    document.getElementById("ThirdImage").style.width = firstImageWidth + "px";
+                    document.getElementById("ThirdImage").style.height = firstImageHeight + "px";
+                    document.getElementById("FourthImage").style.width = firstImageWidth + "px";
+                    document.getElementById("FourthImage").style.height = firstImageHeight + "px";
+                    document.getElementById("FifthImage").style.width = firstImageWidth + "px";
+                    document.getElementById("FifthImage").style.height = firstImageHeight + "px";
+                    document.getElementById("SixthImage").style.width = firstImageWidth + "px";
+                    document.getElementById("SeventhImage").style.height = firstImageHeight + "px";
+                    document.getElementById("SeventhImage").style.width = firstImageWidth + "px";
+                }
+                
+    </script>
+    <script>
+        var clickCounter = 0;
+
+        // var firstPhotoShown = false;
+        var secondPhotoShown = false;
+        var thirdPhotoShown = false;
+        var fourthPhotoShown = false;
+        var fifthPhotoShown = false;
+        var sixthPhotoShown = false;
+        var seventhPhotoShown = false;
+
+        $(".pictures").click(function() {
+            clickCounter+=1;
+            console.log(clickCounter);
+            if (clickCounter == 2){
+                if (secondPhotoShown==false) {
+                $("#SecondImage").addClass("change").delay(2500).queue(function(){
+                $("#SecondImage").removeClass("change").dequeue();
+                $("#SecondImage").attr('src','sixYears-modified.png');
+                secondPhotoShown = true;
+            });
+            }
+            if (thirdPhotoShown==false) {
+            $("#ThirdImage").addClass("change").delay(2500).queue(function(){
+                $("#ThirdImage").removeClass("change").dequeue();
+                $("#ThirdImage").attr('src','tennisPicture.jpg');
+                thirdPhotoShown = true;
+            });
+            }
+            if (fourthPhotoShown==false) {
+            $("#FourthImage").addClass("change").delay(2500).queue(function(){
+                $("#FourthImage").removeClass("change").dequeue();
+                $("#FourthImage").attr('src','firstS.png');
+                fourthPhotoShown = true;
+            });
+            }
+            if (fifthPhotoShown==false) {
+            $("#FifthImage").addClass("change").delay(2500).queue(function(){
+                $("#FifthImage").removeClass("change").dequeue();
+                $("#FifthImage").attr('src','lyceum-modified.png');
+                fifthPhotoShown = true;
+            });
+            }
+            if (sixthPhotoShown==false) {
+            $("#SixthImage").addClass("change").delay(2500).queue(function(){
+                $("#SixthImage").removeClass("change").dequeue();
+                $("#SixthImage").attr('src','meWMomTheatre-modified.png');
+                sixthPhotoShown = true;
+            });
+            }
+            if (seventhPhotoShown==false) {
+            $("#SeventhImage").addClass("change").delay(2500).queue(function(){
+                $("#SeventhImage").removeClass("change").dequeue();
+                $("#SeventhImage").attr('src','wPolina-modified.png');
+                sixthPhotoShown = true;
+            });
+            }
+        
+    }
+});
+    
+        $("#bgColor").click(function(){
+            $("html").css('overflow', 'visible');
+        });
+       
+        
+        $("#SecondImage").mouseenter(function(){
+            if (secondPhotoShown==false) {
+            $(this).addClass("change").delay(2500).queue(function(){
+                $(this).removeClass("change").dequeue();
+                $(this).attr('src','sixYears-modified.png');
+                secondPhotoShown = true;
+            });
+        }
+        });
+        $("#ThirdImage").mouseenter(function(){
+            if (thirdPhotoShown==false) {
+            $(this).addClass("change").delay(2500).queue(function(){
+                $(this).removeClass("change").dequeue();
+                $(this).attr('src','tennisPicture.jpg');
+                thirdPhotoShown = true;
+            });
+        }
+        });
+        $("#FourthImage").mouseenter(function(){
+            if (fourthPhotoShown==false) {
+            $(this).addClass("change").delay(2500).queue(function(){
+                $(this).removeClass("change").dequeue();
+                $(this).attr('src','firstS.png');
+                fourthPhotoShown = true;
+            });
+        }
+        });
+        $("#FifthImage").mouseenter(function(){
+            if (fifthPhotoShown==false) {
+            $("#FifthImage").addClass("change").delay(2500).queue(function(){
+                $("#FifthImage").removeClass("change").dequeue();
+                $("#FifthImage").attr('src','lyceum-modified.png');
+                fifthPhotoShown = true;
+            });
+        }
+        });
+        $("#SixthImage").mouseenter(function(){
+            if (sixthPhotoShown==false) {
+            $("#SixthImage").addClass("change").delay(2500).queue(function(){
+                $("#SixthImage").removeClass("change").dequeue();
+                $("#SixthImage").attr('src','meWMomTheatre-modified.png');
+                sixthPhotoShown = true;
+            });
+            }
+        });
+        $("#SeventhImage").mouseenter(function(){
+            if (seventhPhotoShown==false) {
+            $("#SeventhImage").addClass("change").delay(2500).queue(function(){
+                $("#SeventhImage").removeClass("change").dequeue();
+                $("#SeventhImage").attr('src','wPolina-modified.png');
+                seventhPhotoShown = true;
+            });
+            }
+        });
+        
+        
+
+        $("#sixYearsBtn").click(function() {
+            
+            $('html,body').animate({
+                scrollTop: $("#sixYearTextDiv").offset().top},
+                'slow');
+        });
+        $("#thirteenYearsBtn").click(function() {
+            
+            $('html,body').animate({
+                scrollTop: $("#thirteenYearsDiv").offset().top},
+                'slow');
+        });
+        $("#seventeenYearsBtn").click(function() {
+            
+            $('html,body').animate({
+                scrollTop: $("#seventeenYearsDiv").offset().top},
+                'slow');
+        });
+        $("#sixteenYearsBtn").click(function() {
+            $('html,body').animate({
+                scrollTop: $("#sixteenYearsDiv").offset().top},
+                'slow')
+        });
+        // $("#SecondImage").mouseenter(function(){
+        //     if (firstPhotoShown==false) {
+        //     $(this).addClass("change").delay(2500).queue(function(){
+        //         $(this).removeClass("change").dequeue();
+        //         $(this).attr('src','tennisPicture.jpg');
+        //         firstPhotoShown = true;
+        //     });
+        // }
+        // });
+    </script>
+    
+</body>
+</html>

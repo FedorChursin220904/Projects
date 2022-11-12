@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <style type="text/css">
+
+        html {
+            font-family: 'Lato', sans-serif;
+          overflow: hidden;}
+    
+       
+        body{
+            background-color: #011B3C;
+        }
+        #topHeader{
+            color: white;
+            position:absolute;
+            left:50vw;
+            transform: translate(-50%)
+           
+             
+        }
+        #bgColor{
+            background-color: rgba(59, 59, 59, 0.5);
+            width:100%;
+            height:100%;
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color:white;
+            font-size:2vw;
+        }
+    
+        .greetingPopUp{
+            z-index: 1;
+            position: absolute;
+            opacity: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width:45%;
+            height:65%;
+            background-color: white;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            text-align: center;
+           
+        }
+
+        #greetingText{
+            font-size:2vw;
+            color:#011B3C;
+            position: absolute;
+            opacity: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+        #sportsDiv{
+            margin-left:5vw;
+            width: 33%;
+            border-radius: 5px;
+            height:calc(33vw*1.25);
+            background-color:white;
+           
+        }
+        /* #arrowButton{
+            position: absolute;
+            left:31%;
+            top:calc(33vw*1.25*0.5);
+            transform: translate(-31%,calc(-1*33%*1.25*0.5));
+            background-color:transparent;
+            border:0;
+            color:green;
+            width:10%;
+            height:10%;
+            font-size:calc(33vw*0.05);
+        } */
+       
+        * {box-sizing:border-box}
+
+        /* Slideshow container */
+        .slideshow-containerSports {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlidesSports {
+        display: none;
+        }
+
+        /* Next & previous buttons */
+        .prevSports, .nextSports {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .nextSports {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prevSports:hover, .nextSports:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dotSports {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dotSports:hover {
+        background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fadeSports {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+
+        @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+/* Tech */
+        .slideshow-containerTechs {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlidesTechs {
+        display: none;
+        }
+
+        /* Next & previous buttons */
+        .prevTechs, .nextTechs {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .nextTechs {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prevTechs:hover, .nextTechs:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dotTechs {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dotTechs:hover {
+        background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fadeTechs {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+
+        @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+    
+
+        /*Games */
+            .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    }
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+#sporsCorousel{
+    
+    /* position: absolute; */
+    left:2.5vw;
+    top:7.5vh;
+    width:28vw;
+    height:75vh;
+    /* background-color:white; */
+}
+#techsCorousel{
+    /* position: absolute; */
+    top:7.5vh;
+    width:28vw;
+    height:75vh;
+    left:38vw;
+}
+#gamesCorousel{
+    width:28vw;
+    height:75vh;
+}
+#firstImageSport{
+    
+    width:28vw;
+    height:75vh;
+    border:5px solid rgb(129,214,129);
+    text-align: center;
+    vertical-align: middle;
+    
+    /* background-color:white;s */
+    border-radius: 5px;
+}
+#sporsCorouselHeading{
+    color:white;
+}
+#gamesCorouselHeading{
+    color:white;
+}
+#techsCorouselHeading{
+    color:white;
+}
+#firstImageTechnologies{
+  width:28vw;
+    height:75vh;
+    border:5px solid rgb(112, 120, 228);
+    text-align: center;
+    vertical-align: middle;
+    
+    /* background-color:white;s */
+    border-radius: 5px;
+
+}
+#firstImageGames{
+  width:28vw;
+    height:75vh;
+    border:5px solid rgb(129,214,129);
+    text-align: center;
+    vertical-align: middle;
+    
+    /* background-color:white;s */
+    border-radius: 5px;
+}
+#secondImageGames{
+  width:28vw;
+    height:75vh;
+    border:5px solid rgb(129,214,129);
+    text-align: center;
+    vertical-align: middle;
+    
+    /* background-color:white;s */
+    border-radius: 5px;
+}
+#firstTextGames{
+  position: absolute;
+  /* top:50%; */
+  /* left:50%; */
+  /* transform: translate(0, -50%); */
+  /* vertical-align: middle; */
+  padding-top:10vh;
+  padding-left: 2vw;
+  padding-right:2vw;
+  color:white;
+  font-size:1.25vw;
+}
+#secondTextGames{
+  position: absolute;
+  /* top:50%; */
+  /* left:50%; */
+  /* transform: translate(0, -50%); */
+  /* vertical-align: middle; */
+  padding-top:15vh;
+  padding-left: 2vw;
+  padding-right:2vw;
+  color:white;
+  font-size:1.25vw;
+}
+#allCorousels{
+    width:100%;
+    position: absolute;
+    top:7.5vh;
+    height:92.5vh;
+  
+    display:flex;
+    justify-content:space-around;
+}
+#firstTextSport{
+  position: absolute;
+  /* top:50%; */
+  /* left:50%; */
+  /* transform: translate(0, -50%); */
+  /* vertical-align: middle; */
+  padding-top:8.5vh;
+  padding-left: 2vw;
+  padding-right:2vw;
+  color:white;
+  font-size:1.25vw;
+}
+#firstTextTechnologies{
+  position: absolute;
+  /* top:50%; */
+  /* left:50%; */
+  /* transform: translate(0, -50%); */
+  /* vertical-align: middle; */
+  padding-top:10vh;
+  padding-left: 2vw;
+  padding-right:2vw;
+  color:white;
+  font-size:1.25vw;
+}
+#secondTextTechnologies{
+  position: absolute;
+  /* top:50%; */
+  /* left:50%; */
+  /* transform: translate(0, -50%); */
+  /* vertical-align: middle; */
+  padding-top:22.5vh;
+  padding-left: 2vw;
+  padding-right:2vw;
+  color:white;
+  font-size:1.25vw;
+}
+#secondtImageTechnologies{
+  width:28vw;
+    height:75vh;
+    border:5px solid rgb(112, 120, 228);
+    text-align: center;
+    vertical-align: middle;
+    
+    /* background-color:white;s */
+    border-radius: 5px;
+}
+#mePlayingTennis{
+  height:75vh;
+  width:28vw;
+  border-radius:5px;
+  border:5px solid rgb(129,214,129);
+}
+#thirdTextSport{
+  text-align: center;
+  color:white;
+  font-size:1.25vw;
+  padding-top:22.5vh;
+  padding-left: 2vw;
+  padding-right:2vw;
+}
+#thirdImageSport{
+  text-align: center;
+  width:28vw;
+  height:75vh;
+  border:5px solid rgb(129,214,129);
+  
+  /* background-color:white;s */
+  border-radius: 5px;
+
+}
+#meWatchingTennis{
+  height:75vh;
+  width:28vw;
+  border-radius:5px;
+  border:5px solid rgb(129,214,129);
+}
+#fourthImageSport{
+  text-align: center;
+  width:28vw;
+  height:75vh;
+  border:5px solid rgb(129,214,129);
+}
+#fourthTextSport{
+  text-align: center;
+  color:white;
+  font-size:1.25vw;
+  padding-top:25vh;
+  padding-left: 2vw;
+  padding-right:2vw;
+}
+#meSnowboarding{
+  height:75vh;
+  width:28vw;
+  border-radius:5px;
+  border:5px solid rgb(129,214,129);
+}
+#meAtLegoMuseum{
+  height:75vh;
+  width:28vw;
+  border-radius:5px;
+  border:5px solid rgb(112, 120, 228);
+}
+#meWithLegoModel{
+  height:75vh;
+  width:28vw;
+  border-radius:5px;
+  border:5px solid rgb(112, 120, 228);
+}
+.meOnConf{
+  height:75vh;
+  width:28vw;
+  border-radius:5px;
+  border:5px solid rgb(112, 120, 228);
+}
+        
+</style>
+</head>
+
+<body>
+    <h1 id="topHeader">Hobbies</h1>
+    <div id="bgColor">
+      <div class="greetingPopUp">
+          <a id = "greetingText">  On this page I have listed my major hobbies. Explore them by leafing through the pages.
+          </a> 
+      </div>
+  </div>
+    <div id = "allCorousels">
+    <div id = "sporsCorousel">
+        <center><h1 id = "sporsCorouselHeading">Sports</h1></center>
+    <div class="slideshow-containerSports" >
+
+        
+        <div class="mySlidesSports fadeSports">
+            <div id = "firstImageSport">
+              <p id = "firstTextSport">My first hobby is sports
+              </br> 
+            </br>    
+            I like it for many reasons, firstly, 
+            sport gives me amazing emotions. Secondly, 
+            while I am doing any kind of sport I forget about all my problems. What’s more, after a training session I feel relaxed and confident.
+
+            </br></br>
+            Probably, you have already understood that my favourite sport is tennis.
+             I have been playing tennis since I was 4. This sport plays an enormous role in my life,
+              it influenced me in different ways, thanks to tennis now I know that I should never give up,
+               that hard work pays off and also tennis made me feel way more self-confident. I can’t even imagine my life without it.
+              </p>
+            </div>
+            
+        </div>
+      
+        <div class="mySlidesSports fadeSports">
+          <img  id = "mePlayingTennis" src = "mePlaying.jpg">
+        </div>
+      
+        <div class="mySlidesSports fadeSports">
+          <div id = "thirdImageSport">
+            <p id = "thirdTextSport">I also really love to watch professional tennis championships. I have attended them as a viewer approximately 5 times.
+
+            </br>Also, I have a collection of tennis balls signed by professional players 
+            and even a photo with Andrey Rublev. At the moment he is one of the best tennis players worldwide.
+
+            </p>
+          </div>
+          
+        </div>
+        <div class="mySlidesSports fadeSports">
+          <img  id = "meWatchingTennis" src = "tennisRublev.jpg">
+          
+        </div>
+        <div class="mySlidesSports fadeSports">
+          <div id = "fourthImageSport">
+            <p id = "fourthTextSport">By the way, I also do some extreme sports,
+               as they give me an enormous portion of adrenaline. My favourite extreme sport
+                is snowboarding, I have been doing it for 6 years already. I prefer to snowboard with 
+                my friends as it is great fun. Even though sometimes it can be scary or even dangerous 
+                I am not planning to give up this activity, as I got amazing emotions from it.
+
+            </p>
+          </div>
+          
+        </div>
+        <div class="mySlidesSports fadeSports">
+          <img  id = "meSnowboarding" src = "snowboardWVlad.JPG">
+          
+        </div>
+      
+       
+        <a class="prevSports" style="color:white" onclick="plusSlidesSports(-1)">&#10094;</a>
+        <a class="nextSports" style="color:white" onclick="plusSlidesSports(1)">&#10095;</a>
+    </div>
+      <br>
+      
+    
+      <div style="text-align:center">
+    
+        <span class="dotSports" onclick="currentSlideSports(1)"></span>
+        <span class="dotSports" onclick="currentSlideSports(2)"></span>
+        <span class="dotSports" onclick="currentSlideSports(3)"></span>
+        <span class="dotSports" onclick="currentSlideSports(4)"></span>
+        <span class="dotSports" onclick="currentSlideSports(5)"></span>
+        <span class="dotSports" onclick="currentSlideSports(6)"></span>
+      </div>
+    </div>
+
+    <div id = "techsCorousel">
+        <center><h1 id = "techsCorouselHeading">Technologies</h1></center>
+    <div class="slideshow-containerTechs" >
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlidesTechs fadeTechs">
+            <div id = "firstImageTechnologies">
+              <p id = "firstTextTechnologies">My second hobby is technologies and everything related to them
+            </br> 
+          </br>
+        </br>
+        My second hobby is technologies and everything related to them. From a really young age,
+         I was interested in Lego Technics. All-day long I was building different models, it was so impressive and breathtaking, 
+         the most amazing part of this process was making these models move by using small electric engines. Moreover, 
+         I attended some robotics courses when I was 10 years old. There I was told 
+          how to made small and simple programms for robots. This would allow them to move or sort different colored balls
+            </p></div>
+
+         
+        </div>
+      
+        <div class="mySlidesTechs fadeTechs">
+          <img  id = "meAtLegoMuseum" src = "legoMuseumRectangle.jpg">
+        </div>
+        <div class="mySlidesTechs fadeTechs">
+          <img  id = "meWithLegoModel" src = "legoModel.JPG">
+        </div>
+      
+        <div class="mySlidesTechs fadeTechs">
+          <div id = "secondtImageTechnologies">
+            <p id = "secondTextTechnologies">
+              I think these are the main reasons for my interest in technologies nowadays.
+              <br>
+              Usually, I can spend hours watching different videos on YouTube, which explain how robotics or computers work,
+               also I visit a lot of technological exhibitions, they are very fascinating for me, as  
+               I can interact with robots’ software and try to build something by myself.
+
+
+          </p></div></div>
+          <div class="mySlidesTechs fadeTechs">
+            <img  class = "meOnConf" src = "techConfComputer.JPG">
+          </div>
+          <div class="mySlidesTechs fadeTechs">
+            <img  class = "meOnConf" src = "techConfMinion.JPG">
+          </div>
+          <div class="mySlidesTechs fadeTechs">
+            <img  class = "meOnConf" src = "techConfRobotics.JPG">
+          </div>
+          
+      
+      
+        <!-- Next and previous buttons -->
+        <a class="prevTechs" style="color:white" onclick="plusSlidesTechs(-1)">&#10094;</a>
+        <a class="nextTechs" style="color:white" onclick="plusSlidesTechs(1)">&#10095;</a>
+    </div>
+      <br>
+      
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dotTechs" onclick="currentSlideTechs(1)"></span>
+        <span class="dotTechs" onclick="currentSlideTechs(2)"></span>
+        <span class="dotTechs" onclick="currentSlideTechs(3)"></span>
+        <span class="dotTechs" onclick="currentSlideTechs(4)"></span>
+        <span class="dotTechs" onclick="currentSlideTechs(5)"></span>
+        <span class="dotTechs" onclick="currentSlideTechs(6)"></span>
+        <span class="dotTechs" onclick="currentSlideTechs(7)"></span>
+      </div>
+    </div>
+    <div id = "gamesCorousel">
+        <center><h1 id = "gamesCorouselHeading">Games & Programming</h1></center>
+        <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div id = "firstImageGames">
+              <p id = "firstTextGames">And the last but not the least hobby is programing & computer games.</br></br>
+                Nowadays I prefer programming to playing computer games, 
+                but  I am sure that computer games had a big influence on me, 
+                as I have played them a lot. Thanks to games I am more compatible and stress-resistant, 
+                also now I know all about teamwork. What is more, I played in a team with my friends, and we participated in several tournaments. 
+                     </p>
+            </div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div id = "secondImageGames">
+            <p id = "secondTextGames"> I believe that my interest in programming was influenced by games.</br></br>
+              I always wondered how games are made, that is why I read some articles about programming when I was 8. 
+              I prefer to spend most of my free time doing programming now, as it captivates for me, I have already made two projects 
+              and I am planning to make one more in the nearest future. 
+            </br> <a href = "projectsPage.html">Click here to read about them.</a>
+                   </p>
+          </div>
+        </div>
+        
+       
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          
+        </div>
+    </div>
+</div>
+      <script type="text/javascript">
+         document.getElementById("bgColor").onclick = function(){
+                    document.getElementById("bgColor").style.opacity = "0.0";
+                    document.getElementById("bgColor").remove();
+                    
+                   
+                }
+        var slideIndexSports = 1;
+        showSlidesSports(slideIndexSports);
+
+        function plusSlidesSports(n) {
+        showSlidesSports(slideIndexSports += n);
+        }
+
+        function currentSlideSports(n) {
+        showSlidesSports(slideIndexSports = n);
+        }
+
+        function showSlidesSports(n) {
+        var i;
+        var slidesSports = document.getElementsByClassName("mySlidesSports");
+        var dotsSports = document.getElementsByClassName("dotSports");
+        if (n > slidesSports.length) {slideIndexSports = 1}    
+        if (n < 1) {slideIndexSports = slidesSports.length}
+        for (i = 0; i < slidesSports.length; i++) {
+            slidesSports[i].style.display = "none";  
+        }
+        for (i = 0; i < dotsSports.length; i++) {
+            dotsSports[i].className = dotsSports[i].className.replace(" active", "");
+        }
+        slidesSports[slideIndexSports-1].style.display = "block";  
+        dotsSports[slideIndexSports-1].className += " active";
+        }
+        //Tech
+        var slideIndexTech = 1;
+        showSlidesTech(slideIndexTech);
+
+        function plusSlidesTechs(n) {
+        showSlidesTech(slideIndexTech += n);
+        }
+
+        function currentSlideTechs(n) {
+        showSlidesTech(slideIndexTech = n);
+        }
+        function showSlidesTech(n) {
+        var i;
+        var slidesTech = document.getElementsByClassName("mySlidesTechs");
+        var dotsTech = document.getElementsByClassName("dotTechs");
+        if (n > slidesTech.length) {slideIndexTech = 1}    
+        if (n < 1) {slideIndexTech = slidesTech.length}
+        for (i = 0; i < slidesTech.length; i++) {
+            slidesTech[i].style.display = "none";  
+        }
+        for (i = 0; i < dotsTech.length; i++) {
+            dotsTech[i].className = dotsTech[i].className.replace(" active", "");
+        }
+        slidesTech[slideIndexTech-1].style.display = "block";  
+        dotsTech[slideIndexTech-1].className += " active";
+        }
+
+        //Game Center
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        }
+        </script>
+                    
+        <script>
+           $("#bgColor").click(function(){
+            $("html").css('overflow', 'visible');
+        });
+        </script> 
+    
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <title>Education</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <style type="text/css">
+
+        html {
+            font-family: 'Lato', sans-serif;
+        overflow: hidden;}
+    
+       
+        body{
+            background-color: #011B3C;
+        }
+        #topHeader{
+            color: white;
+            position:absolute;
+            left:50vw;
+            transform: translate(-50%)
+        }
+
+        #bgColor{
+            background-color: rgba(59, 59, 59, 0.5);
+            width:100%;
+            height:100%;
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color:white;
+            font-size:2vw;
+            z-index: 2;
+        }
+    
+        .greetingPopUp{
+            z-index: 1;
+            position: absolute;
+            opacity: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width:45%;
+            height:65%;
+            background-color: white;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            text-align: center;
+           
+        }
+
+        #greetingText{
+            font-size:2vw;
+            color:#011B3C;
+            position: absolute;
+            opacity: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+    
+       
+        .timeline {
+        position: absolute;
+        width:50vw;
+        left:25%;
+        margin: 0 auto;
+        margin-bottom: 5vh;
+        top:10vh;
+        /* transform: translate(-25%,0); */
+        }
+        * {
+        box-sizing: border-box;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: white;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+        }
+
+        /* Container around content */
+        .container {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+        }
+
+        /* The circles on the timeline */
+        .container::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        background-color: white;
+        border: 4px solid #FF9F55;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+        }
+
+        /* Place the container to the left */
+        .left {
+        left: 0;
+        }
+
+        /* Place the container to the right */
+        .right {
+        left: 50%;
+        }
+
+        /* Add arrows to the left container (pointing right) */
+        .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid white;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+        }
+
+        /* Add arrows to the right container (pointing left) */
+        .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+        }
+
+        /* Fix the circle for containers on the right side */
+        .right::after {
+        left: -16px;
+        }
+
+        /* The actual content */
+        .content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+        }
+
+        /* Media queries - Responsive timeline on screens less than 600px wide */
+        @media screen and (max-width: 600px) {
+        /* Place the timelime to the left */
+        .timeline::after {
+            left: 31px;
+        }
+
+        /* Full-width containers */
+        .container {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+
+        /* Make sure that all arrows are pointing leftwards */
+        .container::before {
+            left: 60px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        /* Make sure all circles are at the same spot */
+        .left::after, .right::after {
+            left: 15px;
+        }
+
+        /* Make all right containers behave like the left ones */
+        .right {
+            left: 0%;
+        }
+        }
+        #topHeader{
+            color: white;
+            position:absolute;
+            left:50vw;
+           
+             
+        }
+        
+        #certificatesDiv{
+            position:absolute;
+            width:100%;
+            
+        }
+        #certificatesDivHeader{
+            color:white;
+            position:absolute;
+            left:50%;
+            transform: translate(-50%);
+            
+        }
+        #udemyCert{
+            /* position: absolute; */
+            /* top:2vh; */
+            display:flex;
+            justify-content:space-around;
+            margin-bottom: 2vh;
+
+        }
+        #IosDevUdemy{
+            /* position:absolute; */
+        
+            width:45vw;
+            height:calc(45vw*0.74);
+        }
+        #WebDevUdemy{
+            /* position:absolute; */
+    
+            width:45vw;
+            height:calc(45vw*0.74);
+        }
+        #CcaCert{
+            display:flex;
+            justify-content:space-around;
+            margin-bottom: 2vh;
+        }
+        #CcaCss{
+            /* position:absolute; */
+            
+         
+            width:45vw;
+            height:calc(45vw*0.74);
+        }
+        #CcaHtml{
+            /* position:absolute; */
+           
+            width:45vw;
+            height:calc(45vw*0.74);
+        }
+        #CcaPython{
+            /* position: absolute; */
+           
+            width:45vw;
+            height:calc(45vw*0.74);
+        }
+        
+        
+        </style>
+</head>
+<body>
+    
+    <h1 id="topHeader">Education</h1>
+
+    <div id="bgColor">
+        <div class="greetingPopUp">
+            <a id = "greetingText">  On this page you can find information about my education. </br>Just scroll down.
+            </a> 
+        </div>
+    </div>
+  
+    
+    <div class="timeline" id ="timeline">
+        
+        <div class="container left">
+          <div class="content">
+            <h2>The first of September 2011</h2>
+            <p>I went to the school №1329 in Moscow. This school specialized in linguistics. 
+                That is why I had English lessons at least three times a week in the primary school. I did not have any difficulties with English as I attended English courses with native speakers for 2 years before school.</p>
+          </div>
+        </div>
+        <div class="container right">
+          <div class="content">
+            <h2>1-6 classes</h2>
+            <p> I had excellent marks in all subjects during this period. In the fifth class I took a lot of new subjects such as Physics, Biology, Computer Science, Algebra and Geometry. At this moment I understood that I like Algebra, Geometry, Physics and Computer Science way more than any other subjects.</p>
+          </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+              <h2>7th class</h2>
+              <p>As my school specialized in linguistics, in the 7th class 
+                I decided to enroll in the highly ranked lyceum 1535 in Moscow, 
+                that decision was a turning point in my life. I started studying thoroughly and meticulously that year,
+                 as I was determined to get into a better school. There were three exams that I needed to pass: 
+                 the maths exam, the Russian language exam, and the English language exam. I got enough points to be enrolled in the lyceum. I was delighted with the news, 
+                 because I understood that this had a great influence on my future life.</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+              <h2>8th class</h2>
+              <p>As I started going to the new school I understood that the learning requirements were much higher than in my previous school.
+                   At first, it was tough for me, but later I got the hang of it. Thanks to lyceum I began to like 
+                   studying because new material was given in a very thought-provoking way. More and more I started 
+                   to realize that my favorite subjects are Physics, Maths and Computer Science.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+              <h2>9th class</h2>
+              <p>The second year in the Lyceum was not as hard as the first one. At the end of the ninth class, 
+                  I had to choose a specialization for the last two years of school, so I started to think about
+                   what I would like to do in the future. As I was really interested in Computer Science I decided 
+                   to enroll in the IT class. I had to pass Maths and Computer Science exams to be accepted. It was practicing
+                    a lot and it was not hard for me. In the middle of April, I knew that I was enrolled, that is why I decided 
+                    to take additional courses. I wanted to try my hand at being a developer, I purchased an online course, but honestly I did 
+                    not enjoy the process of making games, so I got a refund and learned how to make websites. (You can find certificates for all courses down below)</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+              <h2>10th class</h2>
+              <p>The new year I started with great interest, as I really wanted to study computer science at a higher level and maths too. 
+                Within a week I soon came to find that I had a much higher level of maths and computer science than in the previous years, the tasks were complex and these classes really boosted my knowledge to a new level.
+                  Also, I had an amazing subject called programming there we studied different programming languages. That year I decided to 
+                  make a project dedicated to ecology. I made an app that will make a difference in nowadays situation. This app is called EcoStep 
+                  and it helps people to calculate their carbon footprint and then the app gives personal tips on how to reduce that footprint. To make this app 
+                  I studied IOS development for two months. <a href = "projectsPage.html">Click here to read more about EcoStep.</a> What is more, in the tenth I decided to make up my mind and choose where I
+                would like to study in the future. As a result, now I would like to get a degree in the Netherlands in the Artificial Intelligence sphere. </p>
+            </div>
+        </div>
+        <div class="container left" id = "lastContainer">
+            <div class="content">
+              <h2>11th class</h2>
+              <p>This year I am finishing school and I am studying hard to achieve my goal.</p>
+            </div>
+        </div>
+      </div>
+
+      <div id = "certificatesDiv">
+          
+        <div id = "udemyCert">
+          <img  id = "IosDevUdemy" src = "udemyIosDevCert.jpg">
+          <img  id = "WebDevUdemy" src = "WebDevCertificate.jpg">
+        </div>
+        <div id = "CcaCert">
+          <img id = "CcaCss" src = "ccaCssPic.png">
+          <img id = "CcaHtml" src = "ccaHtmlPic.png">
+        </div>
+          <center><img id = "CcaPython" src = "ccaPythonPic.png">
+      </div>
+
+   
+    
+    <script type="text/javascript">
+         document.getElementById("bgColor").onclick = function(){
+                    document.getElementById("bgColor").style.opacity = "0.0";
+                    document.getElementById("bgColor").remove();
+                    
+                   
+                }
+        window.onload = function() {
+        var heightOfTimeLineDiv = document.getElementById("timeline").getBoundingClientRect().bottom;
+        console.log(heightOfTimeLineDiv);
+        var heightOfPage = $(window).height();
+        document.getElementById("certificatesDiv").style.top = heightOfTimeLineDiv + 0.05*heightOfPage + "px";
+
+        }
+
+        var linksForPdf = ["CCA-Certificate-CSSLevel1.pdf","CCA-Certificate-HTMLLevel1.pdf","CCA-Certificate-PythonLevel1.pdf","https://www.udemy.com/course/the-complete-web-developer-course-2/","https://www.udemy.com/course/ios-13-app-development-bootcamp/"]
+
+        document.getElementById("CcaPython").onclick = function(){
+        
+            window.open(linksForPdf[2],"_blank");
+        }
+
+        document.getElementById("CcaHtml").onclick = function(){
+            window.open(linksForPdf[1],"_blank");
+        }
+        document.getElementById("CcaCss").onclick = function(){
+            window.open(linksForPdf[0],"_blank");
+        }
+        document.getElementById("WebDevUdemy").onclick = function(){
+            
+            window.open(linksForPdf[3],"_blank");
+        }
+        document.getElementById("IosDevUdemy").onclick = function(){
+            window.open(linksForPdf[4],"_blank");
+        }
+        
+    
+    </script>
+    <script>
+         $("#bgColor").click(function(){
+            $("html").css('overflow', 'visible');
+        });
+    </script>
+    
+    
+</body>
+</html>
+
+

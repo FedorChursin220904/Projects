@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <style type="text/css">
+
+        html {overflow: hidden;
+            font-family: 'Lato', sans-serif;}
+    
+        .whiteLineWithRadius{
+            background-color:white;
+            border-radius: 20px;
+            border-width: 0px;
+        }
+        .whiteLine{
+            background-color:white;
+        }
+        .whiteLineWithRadiusRightSide{
+            background-color:white;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .whiteLineWithRadiusLeftSide{
+            background-color:white;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        body{
+            background-color: #011B3C;
+           
+        }
+        .verticalLinesFullScreen{
+            width:100vw;
+            height: 2.5vh;
+        }
+        .verticalLinesFullScreenBot{
+            width:100%;
+            height: 2.5vh;
+            bottom:0;
+        }
+        .paddingBetweenVerticalLines{
+            margin-top:7.5vh;
+        }
+        .paddingBetweenVerticalLinesBot{
+            margin-bottom:7.5vh;
+        }
+        .horizontalLineInCenter{
+            height:10vh;
+            width:2.5vh;
+            
+            left:50%;
+        }
+        .verticalMiddleLineLeft{
+            width:25vw;
+            
+            left:calc(50% - 25vw + 2.5vh);
+            top:50vh;
+            height:2.5vh;
+        }
+        .verticalMiddleLineRight{
+            width:25vw;
+            left:50%;
+            top:50vh;
+            height:2.5vh;
+        }
+        .halfCourtLeftLine{
+            height:80vh;
+            left:calc(50% + 25vw - 2vh);
+            top: 10vh;
+            width:2.5vh;
+        }
+        .halfCourtRightLine{
+            height:80vh;
+            left:calc(50% - 25vw + 2vh);
+            top: 10vh;
+            width:2.5vh;
+        }
+        .SmallLineOnTheLeft{
+            width: 2.5vw;
+            top:50%;
+            left:0%;
+            height:2.5vh;
+        }
+        .SmallLineOnTheRight{
+            width: 2.5vw;
+            top:50%;
+            right:0%;
+            height:2.5vh;
+        }
+        .mainPageButtons{
+            background-color:transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+            outline:none;
+            color:white;
+            font-size: 24px;
+            
+            
+        }
+        #tennisBallLeft{
+            position: absolute;
+            width:9vw;
+            height:9vw;
+            visibility:hidden;
+            left:-250px;
+            top:45vh;
+            
+        }
+        #tennisBallRight{
+            position:absolute;
+            width:9vw;
+            height:9vw;
+            visibility:hidden;
+            right:-250px;
+            top:45vh;
+
+        }
+        #bgColor{
+            background-color: rgba(59, 59, 59, 0.5);
+            width:100%;
+            height:100%;
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color:white;
+            font-size:2vw;
+        }
+    
+        .greetingPopUp{
+            z-index: 1;
+            position: absolute;
+            opacity: 1;
+            left: 50.5%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width:45%;
+            height:60%;
+            background-color: white;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            text-align: center;
+           
+        }
+
+        #greetingText{
+            font-size:2vw;
+            color:#011B3C;
+            position: absolute;
+            opacity: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+        
+        
+        </style>
+   
+   
+
+
+
+</head>
+<body>
+    <div id="bgColor">
+        <div class="greetingPopUp">
+            <a id = "greetingText"> Welcome! I am Fedor Chursin and this is my portfolio. </br></br>
+                For better experience use full screen mode.</br></br> Be careful while exploring this site as it contains noise effects. Tap anywhere to continue.
+            </a>
+            
+        </div>
+    
+    </div>
+        <a class="whiteLineWithRadius verticalLinesFullScreen" style="position:absolute">
+        <a class="whiteLineWithRadius verticalLinesFullScreen paddingBetweenVerticalLines" id="verticalLinewithPadding"style="position:absolute">
+
+        
+        <a class="whiteLineWithRadius horizontalLineInCenter" style="position: absolute;" id="vertLineNet">
+       
+        
+        <a class="whiteLineWithRadius verticalLinesFullScreenBot paddingBetweenVerticalLinesBot" id="verticalLinewithPaddingBot" style="position:absolute">
+        <a class="whiteLineWithRadius verticalLinesFullScreenBot" style="position:absolute" id="lowestLineMainScreenCourt">
+
+        <a class="whiteLineWithRadius verticalMiddleLineLeft"  style="position:absolute" id="leftHfCourtLineHor">
+        <a class="whiteLineWithRadius verticalMiddleLineRight" style="position:absolute" id="rightHfCourtLineHor"></a>
+
+        <a class="whiteLine halfCourtLeftLine" style="position:absolute" id="rightHfCourtLineVert"></a>
+        <a class="whiteLine halfCourtRightLine" id="leftHfCourtLineVert"style="position:absolute"></a>
+        
+        <a class="whiteLineWithRadiusRightSide SmallLineOnTheLeft" style="position:absolute"></a>
+        <a class="whiteLineWithRadiusLeftSide SmallLineOnTheRight" style="position:absolute"></a>
+
+        <button style="position:absolute"  class="mainPageButtons" id="LifeButton">Life</button>
+        <button style="position:absolute"  class="mainPageButtons" id="ProjectsButton">Projects</button>
+        <button style="position:absolute"  class="mainPageButtons" id="HobbiesButton">Hobbies</button>
+        <button style="position:absolute" class="mainPageButtons" id="EducationButton">Education</button>
+
+        <img src="tennisBall.png" id = "tennisBallLeft" style="position:absolute">
+        <img src="tennisBall.png" id = "tennisBallRight" style="position:absolute">
+        <audio src="tennisserve.mp3" id = "audio"></audio>
+           
+            <script type="text/javascript">
+
+                var  isBallShow =false;
+
+                var haveGreetingBeenShwon = false;
+                
+              
+                window.onload = function(){
+                    haveGreetingBeenShwon = localStorage.getItem("greetingBool")
+                    if (haveGreetingBeenShwon){
+                    document.getElementById("bgColor").remove();
+                    }
+                    
+                    console.log(location.href)
+                    isBallShow = false;
+                    // Makes center line(net) apropriate size
+                    var rect = document.getElementById("lowestLineMainScreenCourt").getBoundingClientRect();
+                    var pos = rect.y;
+                    var barSize = document.getElementById("lowestLineMainScreenCourt").style.height;
+                    pos -= barSize/2;
+                    document.getElementById("vertLineNet").style.height = pos + "px";
+
+                    //Set width and height of  buttons
+                    var leftHfCourtLineRect = document.getElementById("leftHfCourtLineVert").getBoundingClientRect();
+                    var centralVerticalLineRect = document.getElementById("vertLineNet").getBoundingClientRect();
+                    
+
+                    var leftHfCourtLinePos = leftHfCourtLineRect.x;
+                    var centralVerticalLinePos = centralVerticalLineRect.x;
+                    var widthOfLines =  document.getElementById("leftHfCourtLineVert").offsetWidth;
+                    var verticalDistance = centralVerticalLinePos - leftHfCourtLinePos;
+
+                    var topVertLineRect = document.getElementById("verticalLinewithPadding").getBoundingClientRect();
+                    var centralLineCrossingHalfCourtRect = document.getElementById("leftHfCourtLineHor").getBoundingClientRect();
+
+                    var topVertLinePos = topVertLineRect.y;
+                    var centralLineCrossingHalfCourtPos = centralLineCrossingHalfCourtRect.y;
+
+                    var bottomLineRect = document.getElementById("verticalLinewithPaddingBot").getBoundingClientRect();
+                    var bottomLinePos = bottomLineRect.y;
+                    var horizontalDistanceBotLine = bottomLinePos - centralLineCrossingHalfCourtPos;
+
+                    var heightLines = document.getElementById("leftHfCourtLineHor").offsetHeight;
+                    // var horizontalDistance = centralLineCrossingHalfCourtPos - topVertLinePos - heightLines*2;
+
+                    var horizontalDistanceTopLine = centralLineCrossingHalfCourtPos - topVertLinePos;
+
+                    document.getElementById("LifeButton").style.height = horizontalDistanceTopLine + "px";
+                    document.getElementById("LifeButton").style.width = verticalDistance + "px";
+                    document.getElementById("HobbiesButton").style.height = horizontalDistanceBotLine + "px";
+                    document.getElementById("HobbiesButton").style.width = verticalDistance + "px"; 
+                    document.getElementById("EducationButton").style.height = horizontalDistanceBotLine + "px";
+                    document.getElementById("EducationButton").style.width = verticalDistance + "px";
+                    document.getElementById("ProjectsButton").style.height = horizontalDistanceTopLine + "px";
+                    document.getElementById("ProjectsButton").style.width = verticalDistance + "px";
+                    
+                    // Aligns left side buttons  in center
+                    var widthCC = document.getElementById("leftHfCourtLineHor").offsetWidth;
+                   
+                    var posOFLine = document.getElementById("leftHfCourtLineVert").offsetLeft;
+                    var lifeBtnWidth =  document.getElementById("LifeButton").offsetWidth;
+                    var educBtnWidth =  document.getElementById("EducationButton").offsetWidth;
+                    
+                    widthCC /=  2;
+                    widthCC += posOFLine;
+                  
+                    document.getElementById("LifeButton").style.left = (widthCC- (lifeBtnWidth/2)) +  "px";
+                    document.getElementById("EducationButton").style.left = (widthCC  - (educBtnWidth/2)) +  "px";
+
+                    
+
+
+
+                    // Alligns right side buttons in center 
+                    var widthC = document.getElementById("rightHfCourtLineHor").offsetWidth;
+                    var posOfRightLine = document.getElementById("vertLineNet").offsetLeft;
+                    var projBtnWidth = document.getElementById("ProjectsButton").offsetWidth;
+                    var hobbies =  document.getElementById("HobbiesButton").offsetWidth;
+                    console.log(posOfRightLine);
+                    widthC /= 2;
+                    console.log(widthC) ;
+                    widthC += posOfRightLine;
+                    console.log(widthC);
+                    document.getElementById("ProjectsButton").style.left = (widthC-(projBtnWidth/2)) +  "px";
+                    document.getElementById("HobbiesButton").style.left = (widthC- (hobbies/2)) +  "px";
+
+                    //  Allign First line  of buttons in center  leftHfCourtLineHor verticalLinewithPadding
+                    var rectVerticalFirstOutLine = document.getElementById("verticalLinewithPadding").getBoundingClientRect();
+                    var rectCentralLine = document.getElementById("leftHfCourtLineHor").getBoundingClientRect();
+                    var positionOfVerticalFirstOutLine = rectVerticalFirstOutLine.y;
+                    var positionOfCentralLine = rectCentralLine.y;
+                    var positionOfButton = (positionOfCentralLine - positionOfVerticalFirstOutLine)/2 + positionOfVerticalFirstOutLine;
+                    var buttonLifeHeight = document.getElementById("LifeButton").offsetHeight / 2;
+                    var buttonProjectsHeight = document.getElementById("ProjectsButton").offsetHeight / 2;
+                    document.getElementById("LifeButton").style.top = (positionOfButton - buttonLifeHeight) +  "px";
+                    document.getElementById("ProjectsButton").style.top = (positionOfButton - buttonLifeHeight) +  "px";
+
+                    // Alligns Second line of buttons in center verticalLinewithPaddingBot
+                    var rectVerticalLasttOutLine = document.getElementById("verticalLinewithPaddingBot").getBoundingClientRect();
+                    var positionOfVerticalLastOutLine = rectVerticalLasttOutLine.y;
+                    var lowerButtonPos = (positionOfCentralLine - positionOfVerticalLastOutLine)/2 + positionOfVerticalLastOutLine;
+                    var buttonEducHeight = document.getElementById("EducationButton").offsetHeight / 2;
+                    var buttonHobbiesHeight = document.getElementById("HobbiesButton").offsetHeight / 2;
+                    document.getElementById("EducationButton").style.top = (lowerButtonPos - buttonEducHeight) +  "px";
+                    document.getElementById("HobbiesButton").style.top = (lowerButtonPos - buttonHobbiesHeight) +  "px";
+
+                    
+                }
+             
+                window.onresize = function(){
+                    
+                     // Makes center line(net) apropriate size
+                     var rect = document.getElementById("lowestLineMainScreenCourt").getBoundingClientRect();
+                    var pos = rect.y;
+                    var barSize = document.getElementById("lowestLineMainScreenCourt").style.height;
+                    pos -= barSize/2;
+                    document.getElementById("vertLineNet").style.height = pos + "px";
+
+                    //Set width and height of  buttons
+                    var leftHfCourtLineRect = document.getElementById("leftHfCourtLineVert").getBoundingClientRect();
+                    var centralVerticalLineRect = document.getElementById("vertLineNet").getBoundingClientRect();
+                    
+
+                    var leftHfCourtLinePos = leftHfCourtLineRect.x;
+                    var centralVerticalLinePos = centralVerticalLineRect.x;
+                    var widthOfLines =  document.getElementById("leftHfCourtLineVert").offsetWidth;
+                    var verticalDistance = centralVerticalLinePos - leftHfCourtLinePos;
+
+                    var topVertLineRect = document.getElementById("verticalLinewithPadding").getBoundingClientRect();
+                    var centralLineCrossingHalfCourtRect = document.getElementById("leftHfCourtLineHor").getBoundingClientRect();
+
+                    var topVertLinePos = topVertLineRect.y;
+                    var centralLineCrossingHalfCourtPos = centralLineCrossingHalfCourtRect.y;
+
+                    var bottomLineRect = document.getElementById("verticalLinewithPaddingBot").getBoundingClientRect();
+                    var bottomLinePos = bottomLineRect.y;
+                    var horizontalDistanceBotLine = bottomLinePos - centralLineCrossingHalfCourtPos;
+
+                    var heightLines = document.getElementById("leftHfCourtLineHor").offsetHeight;
+                    // var horizontalDistance = centralLineCrossingHalfCourtPos - topVertLinePos - heightLines*2;
+
+                    var horizontalDistanceTopLine = centralLineCrossingHalfCourtPos - topVertLinePos;
+
+                    document.getElementById("LifeButton").style.height = horizontalDistanceTopLine + "px";
+                    document.getElementById("LifeButton").style.width = verticalDistance + "px";
+                    document.getElementById("HobbiesButton").style.height = horizontalDistanceBotLine + "px";
+                    document.getElementById("HobbiesButton").style.width = verticalDistance + "px"; 
+                    document.getElementById("EducationButton").style.height = horizontalDistanceBotLine + "px";
+                    document.getElementById("EducationButton").style.width = verticalDistance + "px";
+                    document.getElementById("ProjectsButton").style.height = horizontalDistanceTopLine + "px";
+                    document.getElementById("ProjectsButton").style.width = verticalDistance + "px";
+                    
+                    // Aligns left side buttons  in center
+                    var widthCC = document.getElementById("leftHfCourtLineHor").offsetWidth;
+                   
+                    var posOFLine = document.getElementById("leftHfCourtLineVert").offsetLeft;
+                    var lifeBtnWidth =  document.getElementById("LifeButton").offsetWidth;
+                    var educBtnWidth =  document.getElementById("EducationButton").offsetWidth;
+                    
+                    widthCC /=  2;
+                    widthCC += posOFLine;
+                  
+                    document.getElementById("LifeButton").style.left = (widthCC- (lifeBtnWidth/2)) +  "px";
+                    document.getElementById("EducationButton").style.left = (widthCC  - (educBtnWidth/2)) +  "px";
+
+                    
+
+
+
+                    // Alligns right side buttons in center 
+                    var widthC = document.getElementById("rightHfCourtLineHor").offsetWidth;
+                    var posOfRightLine = document.getElementById("vertLineNet").offsetLeft;
+                    var projBtnWidth = document.getElementById("ProjectsButton").offsetWidth;
+                    var hobbies =  document.getElementById("HobbiesButton").offsetWidth;
+                    console.log(posOfRightLine);
+                    widthC /= 2;
+                    console.log(widthC) ;
+                    widthC += posOfRightLine;
+                    console.log(widthC);
+                    document.getElementById("ProjectsButton").style.left = (widthC-(projBtnWidth/2)) +  "px";
+                    document.getElementById("HobbiesButton").style.left = (widthC- (hobbies/2)) +  "px";
+
+                    //  Allign First line  of buttons in center  leftHfCourtLineHor verticalLinewithPadding
+                    var rectVerticalFirstOutLine = document.getElementById("verticalLinewithPadding").getBoundingClientRect();
+                    var rectCentralLine = document.getElementById("leftHfCourtLineHor").getBoundingClientRect();
+                    var positionOfVerticalFirstOutLine = rectVerticalFirstOutLine.y;
+                    var positionOfCentralLine = rectCentralLine.y;
+                    var positionOfButton = (positionOfCentralLine - positionOfVerticalFirstOutLine)/2 + positionOfVerticalFirstOutLine;
+                    var buttonLifeHeight = document.getElementById("LifeButton").offsetHeight / 2;
+                    var buttonProjectsHeight = document.getElementById("ProjectsButton").offsetHeight / 2;
+                    document.getElementById("LifeButton").style.top = (positionOfButton - buttonLifeHeight) +  "px";
+                    document.getElementById("ProjectsButton").style.top = (positionOfButton - buttonLifeHeight) +  "px";
+
+                    // Alligns Second line of buttons in center verticalLinewithPaddingBot
+                    var rectVerticalLasttOutLine = document.getElementById("verticalLinewithPaddingBot").getBoundingClientRect();
+                    var positionOfVerticalLastOutLine = rectVerticalLasttOutLine.y;
+                    var lowerButtonPos = (positionOfCentralLine - positionOfVerticalLastOutLine)/2 + positionOfVerticalLastOutLine;
+                    var buttonEducHeight = document.getElementById("EducationButton").offsetHeight / 2;
+                    var buttonHobbiesHeight = document.getElementById("HobbiesButton").offsetHeight / 2;
+                    document.getElementById("EducationButton").style.top = (lowerButtonPos - buttonEducHeight) +  "px";
+                    document.getElementById("HobbiesButton").style.top = (lowerButtonPos - buttonHobbiesHeight) +  "px";
+
+                }
+                document.getElementById("bgColor").onclick = function(){
+                    document.getElementById("bgColor").style.opacity = "0.0";
+                    document.getElementById("bgColor").remove();
+                    haveGreetingBeenShwon = true;
+                    localStorage.setItem("greetingBool",haveGreetingBeenShwon)
+                }
+
+                document.getElementById("HobbiesButton").onclick = function(){
+
+                    if (isBallShow == false) {
+                        isBallShow = true;
+                        var audio = document.getElementById("audio");
+                        audio.volume = 0.2;
+                        audio.play();
+
+                        document.getElementById("tennisBallRight").style.visibility = "visible";
+
+                        var lowLineRect  = document.getElementById("verticalLinewithPaddingBot").getBoundingClientRect();
+                        var lowLinePos = lowLineRect.y;
+
+                        var hobbiesBoxRect = document.getElementById("HobbiesButton").getBoundingClientRect();
+                        var hobbiesBoxYPos = hobbiesBoxRect.y+50;
+                        var hobbiesBoxXPos = hobbiesBoxRect.x+50;
+
+
+                        var tennisBallRect = document.getElementById("tennisBallRight").getBoundingClientRect();
+
+                        var startingXPos = tennisBallRect.x;
+                        var startingYPos = tennisBallRect.y;
+                        
+                        var elem = document.getElementById("tennisBallRight");
+
+                        var differenceBetweenXpos = hobbiesBoxXPos-startingXPos;
+                        var differenceBetweenYpos = hobbiesBoxYPos - startingYPos;
+                        var multiplier = differenceBetweenXpos/differenceBetweenYpos;
+                        
+                        var id = setInterval(frame, 5);
+
+                        function frame() {
+                    
+                                if(startingXPos>hobbiesBoxXPos  &&  startingYPos<hobbiesBoxYPos)
+
+                            {
+                                startingXPos+=1*multiplier;
+                                startingYPos+=1;
+                                elem.style.top = startingYPos + 'px';
+                                elem.style.left = startingXPos + 'px';
+                            }
+                            else{
+                                isBallShow = false;
+                                
+                                clearInterval(id);
+                                location.href = "certificatesPage.html";
+                                document.getElementById("tennisBallRight").style.left = '';
+                            
+                                
+                                document.getElementById("tennisBallRight").style.visibility = "hidden";
+                                
+
+                                document.getElementById("tennisBallRight").style.right = -250 + "px";
+                                
+                                document.getElementById("tennisBallRight").style.top = 45 + "vh";
+                                
+                                
+                                
+                                
+                            }
+                          
+                            // else
+                            // {
+                            //         pos--;
+                            //         if(pos<=0) up=false;
+                            //     elem.style.top = pos + 'px';
+                            //     elem.style.left = pos + 'px';
+                            //         }
+                            // }
+                        }
+                        
+                    }
+                }
+                document.getElementById("EducationButton").onclick = function(){
+                    
+                    if (isBallShow==false){
+                    isBallShow = true;
+                    var audio = document.getElementById("audio");
+                    audio.volume = 0.2;
+                    audio.play();
+                    document.getElementById("tennisBallLeft").style.visibility = "visible";
+                    
+
+                    var lowLineRect  = document.getElementById("verticalLinewithPaddingBot").getBoundingClientRect();
+                    var lowLinePos = lowLineRect.y;
+
+                    var educationBoxRect = document.getElementById("EducationButton").getBoundingClientRect();
+                    var educationBoxYPos = educationBoxRect.y+50;
+                    var educationBoxXPos = educationBoxRect.x;
+
+
+                    var tennisBallRect = document.getElementById("tennisBallLeft").getBoundingClientRect();
+
+                    var startingXPos = tennisBallRect.x;
+                    var startingYPos = tennisBallRect.y;
+                    
+                    var elem = document.getElementById("tennisBallLeft");
+
+                    var differenceBetweenXpos = educationBoxXPos-startingXPos;
+                    var differenceBetweenYpos = educationBoxYPos - startingYPos;
+                    var multiplier = differenceBetweenXpos/differenceBetweenYpos
+                    
+                    var id = setInterval(frame, 5);
+
+                    function frame() {
+                 
+                            if(startingXPos<educationBoxXPos  &&  startingYPos<educationBoxYPos)
+
+                        {
+                            startingXPos+=1*multiplier;
+                            startingYPos+=1;
+                            elem.style.top = startingYPos + 'px';
+                            elem.style.left = startingXPos + 'px';
+                        }
+                        else{
+                            isBallShow = false;
+                                clearInterval(id);
+                                // location.href = "educationPage.html";
+                                document.getElementById("tennisBallLeft").style.left =  -250 + "px";
+                            
+                                
+                                document.getElementById("tennisBallLeft").style.visibility = "hidden";
+                                
+
+                                // document.getElementById("tennisBallLeft").style.right = -250 + "px";
+                                
+                                document.getElementById("tennisBallLeft").style.top = 45 + "vh";
+
+                                location.href = "educationPage.html";
+                            }
+                       
+                  
+                        // else
+                        // {
+                        //         pos--;
+                        //         if(pos<=0) up=false;
+                        //     elem.style.top = pos + 'px';
+                        //     elem.style.left = pos + 'px';
+                        //         }
+                        // } 
+                    }
+                    
+                    }
+                }
+                document.getElementById("LifeButton").onclick = function(){
+                    if (isBallShow == false){
+                        isBallShow = true;
+                        var audio = document.getElementById("audio");
+                        audio.volume = 0.2;
+                        audio.play();
+                        document.getElementById("tennisBallLeft").style.visibility = "visible";
+
+                        var lowLineRect  = document.getElementById("verticalLinewithPaddingBot").getBoundingClientRect();
+                        var lowLinePos = lowLineRect.y;
+
+                        var lifeBoxRect = document.getElementById("LifeButton").getBoundingClientRect();
+                        var lifeBoxYPos = lifeBoxRect.y+100;
+                        var lifeBoxXPos = lifeBoxRect.x;
+
+
+                        var tennisBallRect = document.getElementById("tennisBallLeft").getBoundingClientRect();
+
+                        var startingXPos = tennisBallRect.x;
+                        var startingYPos = tennisBallRect.y;
+                        
+                        var elem = document.getElementById("tennisBallLeft");
+
+                        var differenceBetweenXpos = startingXPos-lifeBoxXPos;
+                        var differenceBetweenYpos = lifeBoxYPos - startingYPos;
+                        var multiplier = differenceBetweenXpos/differenceBetweenYpos;
+                        
+                        var id = setInterval(frame, 5);
+
+                        function frame() {
+                    
+                                if(startingXPos<lifeBoxXPos  &&  startingYPos>lifeBoxYPos)
+
+                            {
+                                startingXPos+=1*multiplier;
+                                startingYPos-=1;
+                                elem.style.top = startingYPos + 'px';
+                                elem.style.left = startingXPos + 'px';
+                            }
+                            else{
+                                
+                                isBallShow = false;
+                                clearInterval(id);
+                               
+                                document.getElementById("tennisBallLeft").style.left = -250 + "px";
+                            
+                                
+                                document.getElementById("tennisBallLeft").style.visibility = "hidden";
+                                
+
+                                
+                                
+                                document.getElementById("tennisBallLeft").style.top = 45 + "vh";
+                                location.href = "lifePage.html";
+                            }
+                           
+                            // else
+                            // {
+                            //         pos--;
+                            //         if(pos<=0) up=false;
+                            //     elem.style.top = pos + 'px';
+                            //     elem.style.left = pos + 'px';
+                            //         }
+                            // }
+                        }
+                        
+                    }
+                }
+                document.getElementById("ProjectsButton").onclick = function(){
+                    if (isBallShow==false){
+                        
+                        isBallShow=true;
+                        var audio = document.getElementById("audio");
+                        audio.volume = 0.2;
+                        audio.play();
+                        document.getElementById("tennisBallRight").style.visibility = "visible";
+
+                        var lowLineRect  = document.getElementById("verticalLinewithPaddingBot").getBoundingClientRect();
+                        var lowLinePos = lowLineRect.y;
+
+                        var ProjectBoxRect = document.getElementById("ProjectsButton").getBoundingClientRect();
+                        var ProjectBoxYPos = ProjectBoxRect.y+50;
+                        var ProjectBoxXPos = ProjectBoxRect.x+50;
+
+
+                        var tennisBallRect = document.getElementById("tennisBallRight").getBoundingClientRect();
+
+                        var startingXPos = tennisBallRect.x;
+                        var startingYPos = tennisBallRect.y;
+                        
+                        var elem = document.getElementById("tennisBallRight");
+
+                        var differenceBetweenXpos = ProjectBoxXPos-startingXPos;
+                        var differenceBetweenYpos = ProjectBoxYPos - startingYPos;
+                        var multiplier = differenceBetweenXpos/differenceBetweenYpos;
+                        
+                        var id = setInterval(frame);
+                    
+
+                        var isready = false;
+
+                        function frame() {
+                    
+                                if(startingXPos>ProjectBoxXPos  &&  startingYPos>ProjectBoxYPos)
+
+                            {
+                                startingXPos-=1*multiplier;
+                                startingYPos-=1;
+                                elem.style.top = startingYPos + 'px';
+                                elem.style.left = startingXPos + 'px';
+                            }
+                            else{
+                                isBallShow = false;
+                                
+                                clearInterval(id);
+                                document.getElementById("tennisBallRight").style.left = '';
+                            
+                                
+                                document.getElementById("tennisBallRight").style.visibility = "hidden";
+                                
+
+                                document.getElementById("tennisBallRight").style.right = -250 + "px";
+                                
+                                document.getElementById("tennisBallRight").style.top = 45 + "vh";
+                                location.href = "projectsPage.html";
+                            }
+                            
+                            
+                            
+                            
+                          
+                            // else
+                            // {
+                            //         pos--;
+                            //         if(pos<=0) up=false;
+                            //     elem.style.top = pos + 'px';
+                            //     elem.style.left = pos + 'px';
+                            //         }
+                            // }
+                        }
+                        
+                    }
+                }
+
+                
+            </script>
+</body>
+</html>
